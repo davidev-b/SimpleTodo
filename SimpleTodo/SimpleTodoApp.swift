@@ -13,7 +13,7 @@ struct SimpleTodoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainList()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
