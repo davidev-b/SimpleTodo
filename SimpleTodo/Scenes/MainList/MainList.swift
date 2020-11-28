@@ -30,16 +30,19 @@ struct MainList: View {
                 {
                     Section {
                         ForEach(taskItems, id:\.self) { task in
-                            HStack {
-                                Text(task.title ?? "")
-                                Spacer()
-                                Button(action: {
-                                    //action
-                                })
-                                {
-                                    Image(systemName: "circle")
-                                        .imageScale(.large)
-                                        .foregroundColor(.gray)
+                            NavigationLink(destination: TaskDetailView(task: task))
+                            {
+                                HStack {
+                                    Text(task.title ?? "")
+                                    Spacer()
+                                    Button(action: {
+                                        //action
+                                    })
+                                    {
+                                        Image(systemName: "circle")
+                                            .imageScale(.large)
+                                            .foregroundColor(.gray)
+                                    }
                                 }
                             }
                         }
@@ -65,10 +68,6 @@ struct MainList: View {
             .navigationBarTitle("Simple Todo", displayMode: .large)
             .toolbar {
                 EditButton()
-
-                Button(action: {}) {
-                    Text("Edit")
-                }
             }
         }
     }

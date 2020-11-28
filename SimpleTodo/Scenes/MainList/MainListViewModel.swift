@@ -18,6 +18,7 @@ class MainListViewModel : ObservableObject {
             newTask.title = newTaskTitle
             newTask.createdAt = Date()
             newTask.isDone = false
+            newTask.details = ""
 
             do {
                 try viewContext.save()
